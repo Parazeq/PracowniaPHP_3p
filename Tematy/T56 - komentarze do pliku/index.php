@@ -9,7 +9,7 @@ if (isset($_POST['komentarz'])) {
         if (fwrite($op, $tekst) === false) {
             echo "Dodanie komentarza nie powiodło się";
         }
-        fclose($op); // <- brakowało
+        fclose($op);
     }
 }
 ?>
@@ -23,6 +23,7 @@ if (isset($_POST['komentarz'])) {
 <div>
     <form action="index.php" method="post">
         <h2>Autor: Jakub Kocur 3p</h2>
+        <p>Utwórz skrypt, który będzie zapisywał opinie użytkowników w pliku tekstowym opinie.txt. Na stronie wyświetl formularz, który pozwoli na wpisanie opinii. Nowe opinie powinny być dopisywane do pliku i umieszczane na jego końcu. Dotychczasowe opinie zapisane w pliku tekstowym powinny zostać wyświetlone na stronie i powinny być dostępne dla innych jej użytkowników.</p>
         <p><b>Dodaj swój komentarz na temat globalnego ocieplenia</b><br>(Maksymalnie 255 znaków)</p>
         <textarea name="komentarz" rows="6" cols="50"></textarea><br>
         <input type="submit" value="Wyślij">
