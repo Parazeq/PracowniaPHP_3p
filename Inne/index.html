@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>T32c</title>
+    <link rel="stylesheet" href="../Zadania/P58%20-%20Zaprojektuj%20wlasne%20trampki/style.css">
+</head>
+<body>
+<header>
+  <h1>Zadanie T32c</h1>
+  <h2>Autor: Jakub Kocur 2p/1</h2>
+</header>
+<section class="container">
+  <h2>Formularz konkursu „Podrasuj swoje buty!”</h2>
+  <p>Chcesz zamienić swoje stare trampki na nową parę zaprojektowanych przez siebie butów Forcefield? Napisz nam, dlaczego sądzisz, że powinieneś <i>pożegnać się</i> ze swoimi wysłużonymi butami, a być może zostaniesz jednym z laureatów konkursu!</p>
+
+  <h3>Podstawowe dane</h3>
+  <form id="shoeForm">
+    <label>Imię i nazwisko: <input type="text" name="name" id="name" required></label><br>
+    <label>E-mail: <input type="email" name="email" id="email" required></label><br>
+    <label>Telefon: <input type="tel" name="phone" id="phone"></label><br>
+    <label>Moje buty są TAKIE stare...<br>
+      <textarea name="description" id="description" maxlength="300"></textarea>
+    </label>
+
+    <h3>Zaprojektuj własne trampki:</h3>
+    <fieldset>
+      <legend>Własny projekt butów</legend>
+      <label>Kolor (wybierz jeden):</label><br>
+      <input type="radio" name="color" value="czerwony"> czerwony<br>
+      <input type="radio" name="color" value="niebieski"> niebieski<br>
+      <input type="radio" name="color" value="czarny"> czarny<br>
+      <input type="radio" name="color" value="srebrny"> srebrny<br>
+
+      <label>Opcje (możesz wybrać kilka):</label><br>
+      <input type="checkbox" name="features" value="Błyszczące sznurówki"> Błyszczące sznurówki<br>
+      <input type="checkbox" name="features" value="Metalowe logo"> Metalowe logo<br>
+      <input type="checkbox" name="features" value="Świecące podeszwy"> Świecące podeszwy<br>
+      <input type="checkbox" name="features" value="Odtwarzanie MP3"> Odtwarzanie MP3<br>
+    </fieldset>
+
+    <label>Rozmiar:<br>
+      <select name="size" id="size">
+        <option value="35">35</option>
+        <option value="36">36</option>
+        <option value="37" selected>37</option>
+        <option value="38">38</option>
+        <option value="39">39</option>
+        <option value="40">40</option>
+      </select>
+    </label>
+
+    <br><br>
+    <button type="button" onclick="displayData()">Podrasuj swoje buty!</button>
+    <button type="reset">Resetuj</button>
+  </form>
+  </div>
+</section>
+  <section class="wynik">
+    <p id="wynik">
+
+    </p>
+  </section>
+<script src="main.js"></script>
+</body>
+</html>
