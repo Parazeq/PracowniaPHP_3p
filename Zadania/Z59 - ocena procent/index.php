@@ -2,11 +2,11 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Ocena z testu</title>
+    <title>Ocena z procentu</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Ocena z testu studenckiego</h1>
+<h1>Ocena z procentu</h1>
 <h2>Autor: Jakub Kocur 3p/1</h2>
 <pre>Napisz program, który dla podanego wyniku procentowego testów studenckich wystawia ocenę według następującej zasady:
     5 - 90% do 100%
