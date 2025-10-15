@@ -1,3 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Baza pracowników</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Autor: Jakub Kocur 3p/1</h1>
+<h2>Praca z bazą danych</h2>
+<p>Tym razem zadanie jest bardziej złożone. Oto co należy zrobić:
+
+    Utwórz bazę danych o nazwie 3p_1_baza_pracownikow.
+    Do zadania dołączony został plik zawierający dane 114 pracowników - dokonaj konwersji tych danych do formaty txt (uzyskaj plik z danymi pracownicy.txt.
+    Na utworzonej stronie projektu znajduje się przycisk "Utwórz tabelę", który w bazie 3p_1_baza_pracownikow tworzy tabelę pracownicy.
+    Drugi przycisk "Załaduj dane" dodaje dane z pliku tekstowego pracownicy.txt do tabeli pracownicy.
+    Trzeci przycisk wyświetla dane z tabeli pracownicy w postaci tabelarycznej.</p>
+
+<form method="post" action="">
+    <input type="submit" name="utworz" value="Utwórz tabelę">
+    <input type="submit" name="zaladuj" value="Załaduj dane">
+    <input type="submit" name="pokaz" value="Wyświetl dane">
+</form>
+
+</body>
+</html>
 <?php
 $db = mysqli_connect("localhost", "root", "", "3p_1_baza_pracownikow");
 if (!$db) {
@@ -72,30 +98,3 @@ if (isset($_POST['pokaz'])) {
     }
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Baza pracowników</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<h1>Autor: Jakub Kocur 3p/1</h1>
-<h2>Praca z bazą danych</h2>
-<p>Tym razem zadanie jest bardziej złożone. Oto co należy zrobić:
-
-    Utwórz bazę danych o nazwie 3p_1_baza_pracownikow.
-    Do zadania dołączony został plik zawierający dane 114 pracowników - dokonaj konwersji tych danych do formaty txt (uzyskaj plik z danymi pracownicy.txt.
-    Na utworzonej stronie projektu znajduje się przycisk "Utwórz tabelę", który w bazie 3p_1_baza_pracownikow tworzy tabelę pracownicy.
-    Drugi przycisk "Załaduj dane" dodaje dane z pliku tekstowego pracownicy.txt do tabeli pracownicy.
-    Trzeci przycisk wyświetla dane z tabeli pracownicy w postaci tabelarycznej.</p>
-
-<form method="post" action="">
-    <input type="submit" name="utworz" value="Utwórz tabelę">
-    <input type="submit" name="zaladuj" value="Załaduj dane">
-    <input type="submit" name="pokaz" value="Wyświetl dane">
-</form>
-
-</body>
-</html>
