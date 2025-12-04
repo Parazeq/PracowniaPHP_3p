@@ -24,23 +24,23 @@
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $lit1 = strtoupper(htmlspecialchars($_POST['lit1']));
-    $lit2 = strtoupper(htmlspecialchars($_POST['lit2']));
+    $lit1 = htmlspecialchars($_POST['lit1']);
+    $lit2 = htmlspecialchars($_POST['lit2']);
 
-    if (!ctype_alpha($lit1) || !ctype_alpha($lit2) || strlen($lit1) != 1 || strlen($lit2) != 1) {
-        echo "<p>Podaj pojedyncze litery alfabetu (A–Z)!</p>";
+    if (!ctype_upper($lit1) || !ctype_upper($lit2) || strlen($lit1) != 1 || strlen($lit2) != 1) {
+        echo "<p>Podaj DUŻE litery alfabetu (A–Z)!</p>";
         exit;
     }
+
     $kod1 = ord($lit1);
     $kod2 = ord($lit2);
 
-    echo "<p>Pierwszy znak: <b>$lit1</b><br>Drugi znak: <b>$lit2</b></p>";
-
     if ($kod1 > $kod2) {
-        $tmp = $kod1;
-        $kod1 = $kod2;
-        $kod2 = $tmp;
+        echo "<p style='color:red;'>Pierwsza litera musi być wcześniejsza w alfabecie niż druga!</p>";
+        exit;
     }
+
+    echo "<p>Pierwszy znak: <b>$lit1</b><br>Drugi znak: <b>$lit2</b></p>";
 
     for ($i = $kod1; $i <= $kod2; $i++) {
         echo chr($i);
