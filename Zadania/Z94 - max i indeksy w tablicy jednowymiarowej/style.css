@@ -1,0 +1,31 @@
+:root {
+    --green-1: #0f9d58;
+    --green-2: #98e6a1;
+    --white:   #ffffff;
+    --accent1: #ff6f61;
+    --accent2: #ffcc00;
+    --accent3: #3399ff;
+    font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(160deg, var(--green-1) 0%, var(--green-2) 35%, var(--white) 100%);
+    font-family: Arial, sans-serif;
+    margin: 30px;
+    height: 650px;
+}
+h1, h2, p, pre, form, table, td{
+    text-align: center;
+    color: #2e7d32;
+}
+
+table, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 8px;
+}
+td {
+    min-width: 50px;
+    text-align: center;
+}
+

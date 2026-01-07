@@ -1,0 +1,70 @@
+* {
+    font-family: Georgia;
+}
+
+.baner {
+    background-color: Navy;
+    color: white;
+    text-align: center;
+    height: 100px;
+    width: 50%;
+    float: left;
+}
+
+nav {
+    background-color: Navy;
+    padding: 20px;
+    clear: both;
+}
+
+.opcje {
+    color: Silver;
+    margin: 50px;
+}
+
+.opcje:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.lewy, .prawy {
+    background-color: Azure;
+    height: 550px;
+    float: left;
+}
+
+.lewy {
+    width: 70%;
+}
+
+.prawy {
+    width: 30%;
+}
+
+table {
+    border: 1px solid Navy;
+    margin: auto;
+    width: 70%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid Navy;
+    padding: 5px;
+    text-align: center;
+}
+
+tr:hover {
+    background-color: SkyBlue;
+}
+
+.prawy img {
+    width: 90%;
+}
+
+footer {
+    background-color: Navy;
+    color: white;
+    clear: both;
+    text-align: center;
+}
