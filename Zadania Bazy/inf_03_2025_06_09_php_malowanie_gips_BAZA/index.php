@@ -1,28 +1,23 @@
 <?php
 $host = "localhost";
 $user = "root";
-$pass = "";
-$db = "remonty";
+$password = "";
+$database = "remonty";
 
-$polaczenie = mysqli_connect($host, $user, $pass, $db);
-if ($polaczenie -> connect_error) {
-    die("Zerwano połączenie: " . $polaczenie -> connect_error);
+$conn = mysqli_connect($host, $user, $password, $database);
+if (!$conn) {
+    echo "Błąd połączenia.";
 }
 
 $sql = "SELECT imie, cena FROM klienci JOIN zlecenia USING(id_klienta) WHERE miasto = 'Poznań' AND rodzaj = 'Malowanie';";
 
-$result = mysqli_query($polaczenie, $sql);
-if ($result -> num_rows > 0) {
-    echo "<ul>";
-
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
     while ($row = $result -> fetch_assoc()) {
-        echo "<li>" . "<b>" . $row["imie"] . "</b> " . $row["cena"] . "</li>";
+        echo "<li>" . $row["imie"] . " " . $row["cena"] . "</li>";
     }
-
-    echo "</ul>";
 } else {
-    echo "Brak wyników";
+    echo "Brak wynikow.";
 }
 
-mysqli_close($polaczenie);
-?>
+mysqli_close($conn);
