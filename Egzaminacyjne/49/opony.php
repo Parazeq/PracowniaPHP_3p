@@ -1,6 +1,3 @@
-<?php
-header("Refresh:10");
-?>
 <!doctype html>
 <html lang="pl">
 <head>
@@ -18,6 +15,7 @@ header("Refresh:10");
 <main>
     <aside>
         <?php
+        header("Refresh:10");
         $polaczenie = mysqli_connect("localhost", "root", "", "opony");
         if (!$polaczenie) {
             die("Błąd połączenia z bazą");
