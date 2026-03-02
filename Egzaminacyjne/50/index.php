@@ -33,7 +33,7 @@ if (!$polaczenie) {
         <h2>Standardowy</h2>
         <ul>
             <?php
-            $zapytanie2 = "SELECT cecha FROM cechy WHERE id = 1";
+            $zapytanie2 = "SELECT a.nazwa, c.cecha FROM abonamenty a JOIN SzczegolyAbonamentu s ON a.id = s.Abonamenty_id JOIN Cechy c ON s.Cechy_id = c.id WHERE a.id = 1;";
             $wynik2 = mysqli_query($polaczenie, $zapytanie2);
             while ($wiersz = mysqli_fetch_assoc($wynik2)) {
                 echo "<li>{$wiersz['cecha']}</li>";
@@ -45,7 +45,7 @@ if (!$polaczenie) {
         <h2>Premium</h2>
         <ul>
             <?php
-            $zapytanie3 = "SELECT cecha FROM cechy WHERE id = 2";
+            $zapytanie3 = "SELECT a.nazwa, c.cecha FROM abonamenty a JOIN SzczegolyAbonamentu s ON a.id = s.Abonamenty_id JOIN Cechy c ON s.Cechy_id = c.id WHERE a.id = 2;";
             $wynik3 = mysqli_query($polaczenie, $zapytanie3);
             while ($wiersz = mysqli_fetch_assoc($wynik3)) {
                 echo "<li>{$wiersz['cecha']}</li>";
@@ -57,7 +57,7 @@ if (!$polaczenie) {
         <h2>Dziecko</h2>
         <ul>
             <?php
-            $zapytanie4 = "SELECT cecha FROM cechy WHERE id = 3";
+            $zapytanie4 = "SELECT a.nazwa, c.cecha FROM abonamenty a JOIN SzczegolyAbonamentu s ON a.id = s.Abonamenty_id JOIN Cechy c ON s.Cechy_id = c.id WHERE a.id = 3;";
             $wynik4 = mysqli_query($polaczenie, $zapytanie4);
             while ($wiersz = mysqli_fetch_assoc($wynik4)) {
                 echo "<li>{$wiersz['cecha']}</li>";
