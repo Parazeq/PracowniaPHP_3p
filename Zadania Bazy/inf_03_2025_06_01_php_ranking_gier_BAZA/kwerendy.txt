@@ -1,0 +1,7 @@
+SELECT id, nazwa, zdjecie FROM gry;
+
+SELECT nazwa, LEFT(opis, 100) AS opis_100_znakow, punkty, cena FROM gry WHERE id = 1;
+
+SELECT nazwa, punkty FROM gry ORDER BY id ASC LIMIT 5;
+
+INSERT INTO gry (nazwa, opis, zdjecie, punkty, cena) VALUES ('wartosc1', 'wartosc2', 55, 29.99, 'wartosc5');

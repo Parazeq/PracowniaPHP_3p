@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Planer zadań</title>
+  <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+<aside>
+  <img src="obraz.jpg" alt="notatki">
+</aside>
+<header>
+  <h2>Moje zadania</h2>
+</header>
+<nav>
+  <input type="text" id="noweZadanie" placeholder="Dodaj zadanie...">
+  <button onclick="dodajZadanie()">Dodaj</button>
+</nav>
+<main>
+  <ul id="listaZadan">
+    <li>Wyprowadzić psa <button onclick="oznaczWykonane(this)">Wykonane</button></li>
+    <li>Gimnastyka <button onclick="oznaczWykonane(this)">Wykonane</button></li>
+    <li>Zakupy <button onclick="oznaczWykonane(this)">Wykonane</button></li>
+    <li>Spacer z kumplem <button onclick="oznaczWykonane(this)">Wykonane</button></li>
+    <li>Odrabianie lekcji z młodszą siostrą <button onclick="oznaczWykonane(this)">Wykonane</button></li>
+    <li>Projekt na geografię <button onclick="oznaczWykonane(this)">Wykonane</button></li>
+  </ul>
+</main>
+<footer>
+  <h3>Notatki: Jakub Kocur 3p/1</h3>
+</footer>
+<script>
+  function oznaczWykonane(przycisk) {
+    const elementListy = przycisk.parentElement;
+    elementListy.style.textDecoration = "line-through";
+  }
+  function dodajZadanie() {
+    const input = document.getElementById("noweZadanie");
+    const tekst = input.value;
+
+    if (tekst === "") return;
+
+    const li = document.createElement("li");
+    li.innerHTML = tekst + ' <button onclick="oznaczWykonane(this)">Wykonane</button>';
+
+    document.getElementById("listaZadan").appendChild(li);
+
+    input.value = "";
+  }
+</script>
+</body>
+</html>

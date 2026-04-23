@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Fotografia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Fotografia artystyczna</h1>
+</header>
+<section id="obrazy">
+    <img src="1.jpg" alt="obrazy do sprzedaży" title="1.jpg">
+    <img src="2.jpg" alt="obrazy do sprzedaży" title="2.jpg">
+    <img src="3.jpg" alt="obrazy do sprzedaży" title="3.jpg">
+    <img src="4.jpg" alt="obrazy do sprzedaży" title="4.jpg">
+    <img src="5.jpg" alt="obrazy do sprzedaży" title="5.jpg">
+    <img src="6.jpg" alt="obrazy do sprzedaży" title="6.jpg">
+    <img src="7.jpg" alt="obrazy do sprzedaży" title="7.jpg">
+    <img src="8.jpg" alt="obrazy do sprzedaży" title="8.jpg">
+    <img src="9.jpg" alt="obrazy do sprzedaży" title="9.jpg">
+    <img src="10.jpg" alt="obrazy do sprzedaży" title="10.jpg">
+</section>
+<main>
+    <section id="lewa">
+        <h3>Zamówienie</h3>
+        <label for="plik">Wybierz obraz: </label>
+        <input type="file" id="plik" accept=".jpg"><br>
+        <label for="liczba">Liczba kopii: </label>
+        <input type="number" id="liczba"><br>
+        <input type="radio" name="papier" id="blyszczacy" checked>
+        <label for="blyszczacy">Papier błyszczący</label><br>
+        <input type="radio" name="papier" id="matowy">
+        <label for="matowy">Papier matowy</label><br>
+        <button onclick="dodajDoKoszyka()">Dodaj do koszyka</button>
+    </section>
+    <nav>
+        <ul>
+            <li><a href="regulamin.html">Regulamin</a></li>
+            <li><a href="uslugi.html">Usługi</a></li>
+            <li><a href="https://pixabay.com">Zdjęcia</a></li>
+        </ul>
+    </nav>
+    <section id="prawa">
+        <h3>Koszyk</h3>
+        <div id="koszyk"></div>
+    </section>
+</main>
+<footer>
+    <p>Autor strony: Jakub Kocur 3p/1</p>
+</footer>
+<script>
+    function dodajDoKoszyka() {
+        let plikInput = document.getElementById("plik");
+        let liczba = document.getElementById("liczba").value;
+        let czyBlyszczacy = document.getElementById("blyszczacy").checked;
+
+        let nazwaPliku = plikInput.files[0]?.name;
+
+        let cenaJednostkowa = czyBlyszczacy ? 1.5 : 2;
+        let cena = liczba * cenaJednostkowa;
+
+        let koszyk = document.getElementById("koszyk");
+
+        let img = document.createElement("img");
+        img.src = nazwaPliku;
+
+        let p1 = document.createElement("p");
+        p1.innerText = "Liczba kopii: " + liczba;
+
+        let p2 = document.createElement("p");
+        p2.innerText = "Cena: " + cena + " zł";
+
+        koszyk.appendChild(img);
+        koszyk.appendChild(p1);
+        koszyk.appendChild(p2);
+    }
+</script>
+</body>
+</html>
