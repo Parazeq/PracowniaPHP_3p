@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Pola figur</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+<header>
+<h2>Pola figur płaskich</h2>
+</header>
+<main>
+    <nav>
+    <h3>MENU</h3>
+        <ul>
+            <li><a href="index.html">Prostokąt i trójkąt</a></li>
+            <li><a href="kolo.html">Okrąg i koło</a></li>
+        </ul>
+    </nav>
+    <section>
+        <img src="1d.bmp" alt="Figura" id="zdjecie"><br>
+        <img src="1m.bmp" alt="Wybierz trójkąt" class="zdjecie" onclick="zmien()" id="trojkat"><img src="2m.bmp" alt="Wybierz prostokąt" class="zdjecie" onclick="zmien()" id="prostokat">
+    </section>
+    <aside>
+        <h3>Pole prostokąta / pole trójkąta</h3>
+        <label for="a">Bok prostokąta / podstawa trójkąta:</label><br>
+        <input type="number" id="a"><br>
+        <label for="b">Drugi bok prostokąta / wysokość trójkąta:</label><br>
+        <input type="number" id="b"><br>
+        <button onclick="oblicz()">Oblicz</button>
+        <p id="wynik"></p>
+    </aside>
+</main>
+<footer>
+<p>Autor: Jakub Kocur 3p/1</p>
+</footer>
+<script>
+    let poleFigury = "trojkat"
+    function zmien(){
+        const zdjecie = document.getElementById("zdjecie")
+        const trojkat = document.getElementById("trojkat")
+        const prostokat = document.getElementById("prostokat")
+
+        trojkat.onclick = function (){
+            zdjecie.src = "1d.bmp"
+            poleFigury = "trojkat"
+        }
+        prostokat.onclick = function (){
+            zdjecie.src = "2d.bmp"
+            poleFigury = "prostokat"
+        }
+    }
+    function oblicz(){
+        const bokA = parseFloat(document.getElementById("a").value)
+        const bokB = parseFloat(document.getElementById("b").value)
+        let pole = 0
+        const wynik = document.getElementById("wynik")
+
+        if (poleFigury === "trojkat"){
+            pole = (bokA*bokB)/2
+            wynik.innerHTML = pole
+        }
+        else if (poleFigury === "prostokat"){
+            pole = bokA*bokB
+            wynik.innerHTML = pole
+        }
+    }
+</script>
+</body>
+</html>

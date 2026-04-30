@@ -9,16 +9,54 @@
 <header>
     <img src="montaz_panel.png" alt="firma usługowa">
 </header>
-<menu>
-    <p><a href="index.html">Strona główna</a></p>
-    <p><a href="oferta.html">Oferta</a></p>
-    <p><a href="koszty.html">Kalkulator kosztów</a></p>
-</menu>
+<nav>
+    <p><a href="index.html">Strona główna</a>
+        <a href="oferta.html">Oferta</a>
+        <a href="koszty.html">Kalkulator kosztów</a></p>
+</nav>
 <main>
-
+    <h1>Kalkulator kosztów montażu</h1>
+    <label>Szerokość pomieszczenia [m]:
+        <input type="number" id="szer" step="0.1">
+    </label>
+    <label>Długość pomieszczenia [m]:
+        <input type="number" id="dlug" step="0.1">
+    </label>
+    <p>Typ panelu</p>
+    <input type="radio" id="laminowane" name="panel" value="laminowane">
+    <label for="laminowane">Panele laminowane</label><br>
+    <input type="radio" id="winylowe" name="panel" value="winylowe">
+    <label for="winylowe">Panele winylowe</label><br>
+    <input type="radio" id="deska" name="panel" value="deska">
+    <label for="deska">Deska podłogowa</label>
+    <br>
+    <button onclick="oblicz()">Oblicz</button>
+    <p id="wynik"></p>
 </main>
 <footer>
     <h5>Autor strony: Jakub Kocur 3p/1</h5>
 </footer>
+<script>
+    function oblicz() {
+        const szerokosc = parseFloat(document.getElementById("szer").value);
+        const dlugosc = parseFloat(document.getElementById("dlug").value);
+        const panel = document.querySelector('input[name="panel"]:checked');
+        const wynik = document.getElementById("wynik");
+
+        if (!isNaN(szerokosc) && !isNaN(dlugosc) && panel) {
+            const pole = szerokosc * dlugosc;
+            let cena = 0;
+            if (panel.value === "laminowane") cena = 12;
+            if (panel.value === "winylowe") cena = 14;
+            if (panel.value === "deska") cena = 18;
+
+            const koszt = pole * cena;
+            wynik.textContent = "Pole powierzchni pomieszczenia: " + pole +
+                ", koszt montażu: " + koszt;
+        } else {
+            wynik.textContent = "Wprowadź poprawne dane.";
+        }
+    }
+</script>
 </body>
 </html>
