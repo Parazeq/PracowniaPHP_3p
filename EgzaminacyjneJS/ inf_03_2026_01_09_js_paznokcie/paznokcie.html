@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Stylizacja paznokci</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+<aside>
+    <img src="manicure.jpg" alt="Stylizacja paznokci">
+</aside>
+<main>
+    <header>
+        <h1>Twoje wymarzone paznokcie</h1>
+    </header>
+    <nav>
+        <button onclick="b1()" id="b1">Kolor</button>
+        <button onclick="b2()" id="b2">Kształt</button>
+        <button onclick="b3()" id="b3">Wzór</button>
+        <script>
+            window.onload = function () {
+
+                let btn1 = document.getElementById("b1")
+                let btn2 = document.getElementById("b2")
+                let btn3 = document.getElementById("b3")
+
+                let s1 = document.getElementById("s1")
+                let s2 = document.getElementById("s2")
+                let s3 = document.getElementById("s3")
+
+                s1.style.display = "block"
+                s2.style.display = "none"
+                s3.style.display = "none"
+
+                window.b1 = function () {
+                    s1.style.display = "block"
+                    s2.style.display = "none"
+                    s3.style.display = "none"
+
+                    btn1.style.backgroundColor = "salmon"
+                    btn2.style.backgroundColor = "crimson"
+                    btn3.style.backgroundColor = "crimson"
+                }
+
+                window.b2 = function () {
+                    s1.style.display = "none"
+                    s2.style.display = "block"
+                    s3.style.display = "none"
+
+                    btn1.style.backgroundColor = "crimson"
+                    btn2.style.backgroundColor = "salmon"
+                    btn3.style.backgroundColor = "crimson"
+                }
+
+                window.b3 = function () {
+                    s1.style.display = "none"
+                    s2.style.display = "none"
+                    s3.style.display = "block"
+
+                    btn1.style.backgroundColor = "crimson"
+                    btn2.style.backgroundColor = "crimson"
+                    btn3.style.backgroundColor = "salmon"
+                }
+            }
+        </script>
+    </nav>
+    <section id="s1">
+        <h2>Kolor</h2>
+        <img src="kolory.png" alt="Kolory paznokci"><br>
+        <input type="color" value="#FF0000">
+    </section>
+    <section id="s2">
+        <h2>Kształt</h2>
+        <img src="ksztalt.png" alt="Kształty paznokci">
+        <select name="lista">
+            <option value="migdał">Migdał</option>
+            <option value="zaokrąglony">Zaokrąglony</option>
+            <option value="kwadratowy">Kwadratowy</option>
+            <option value="balerina">Balerina</option>
+            <option value="zkwadrat">Zaokrąglony kwadrat</option>
+        </select>
+    </section>
+    <section id="s3">
+        <h2>Wzór</h2>
+        <script>
+            for (let i = 1; i <= 10; i++){
+                document.write(`<img src="${i}.jpg" class="wzory" title="${i}">`)
+            }
+        </script>
+        <input type="number" min="1" max="10">
+    </section>
+</main>
+<footer>
+    <p>Autor strony: <em>Jakub Kocur 3p/1</em></p>
+</footer>
+</body>
+</html>
